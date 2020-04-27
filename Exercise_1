@@ -17,7 +17,7 @@ public class Main {
                     System.out.print(line[i] + "+");
                 }
                 System.out.println(line[pos - 1]);
-            }
+           // }
            // k++;
         }
         if(n < 0) return;
