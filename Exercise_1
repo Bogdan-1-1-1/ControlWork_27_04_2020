@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class Main {
+    //static long k = 1;
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+
+        int N =in.nextInt();
+        int[] line = new int[N];
+        showSums(N, 1, 0, line);
+    }
+    public static void showSums(int n, int odd, int pos, int[] line) {
+        if(n == 0) {
+            //if(k == 13672) {
+                for (int i = 0; i < pos - 1; i++) {
+                    System.out.print(line[i] + "+");
+                }
+                System.out.println(line[pos - 1]);
+            }
+           // k++;
+        }
+        if(n < 0) return;
+        if(odd > n) return;
+        if(pos > line.length-1) return;
+        line[pos] = odd;
+        showSums(n-odd, odd, pos+1, line);
+        showSums(n, odd+1, pos, line);
+    }
+}
